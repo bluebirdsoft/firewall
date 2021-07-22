@@ -216,7 +216,9 @@ git clone https://gitlab.com/dhj/easyufw.git  /opt/bluebird_firewall/easyufw  2>
  
  print_local_ip
  echo "--------------------------------------------------------------------"
- echo "bluebird Firewall management system is http://$varip/login/login.php"
+ echo "Congratulations, you already have the protective power that can fight against your country's censors"
+ echo "Visit your website, verify through your network"
+ echo "http://$varip/login/login.php"
  echo "--------------------------------------------------------------------"
  }
 
