@@ -125,7 +125,7 @@ function get_package(){
 
 
 
-wget https://wangjiesoft.tk/bluebird_firewall_v1.0.tar.gz  -O /opt/bluebird_firewall/bluebird_firewall_v1.0.tar.gz
+wget https://github.com/bluebirdsoft/firewall/releases/download/1.0/bluebird_firewall_v1.0.tar.gz  -O /opt/bluebird_firewall/bluebird_firewall_v1.0.tar.gz
 
 
 }
