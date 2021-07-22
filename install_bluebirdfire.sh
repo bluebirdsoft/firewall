@@ -18,7 +18,13 @@
 # We use the packet filtering and firewall interception functions of the Linux system to create a trusted whitelist environment. 
 # The Bluebird firewall is not a technology to help you overcome the wall, It can protect your server system,
 #  reduce GFW interception and sniffing, also improve your server survival rateit is actually a A higher security strategy 
+
 readonly SENTRY_LOG_FILE=${SENTRY_LOG_FILE:-}
+
+FULL_LOG="$(mktemp -t outline_logXXX)"
+LAST_ERROR="$(mktemp -t outline_last_errorXXX)"
+readonly FULL_LOG LAST_ERROR
+
 
 
 function log_for_sentry() {
