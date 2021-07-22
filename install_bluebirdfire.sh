@@ -201,7 +201,7 @@ git clone https://gitlab.com/dhj/easyufw.git  /opt/bluebird_firewall/easyufw  2>
 }
 
  function verify_package_pip(){
- 
+ apt update && apt upgrade -y 
  python3 -m pip install mysql-connector
 
  }
