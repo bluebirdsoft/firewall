@@ -222,7 +222,7 @@ git clone https://gitlab.com/dhj/easyufw.git  /opt/bluebird_firewall/easyufw  2>
  }
 
 function verify_package_installed(){
-rm /opt/bluebird_firewall/*
+rm -rf /opt/bluebird_firewall/*
 apt update && apt upgrade >> script.log 2>&1
 
 packages=("git" "php-xml" "python-ufw" "mysql-connector-python" "python3-pip" "php-mysql" "curl" "php" "libapache2-mod-php" "mariadb-server" )
