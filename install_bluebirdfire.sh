@@ -131,8 +131,7 @@ function get_package(){
 rm /opt/bluebird_firewall/bluebird_firewall_v1.0.tar.gz
 rm -rf /opt/bluebird_firewall/×
 rm /var/www/*
-https://github.com/bluebirdsoft/firewall/releases/download/1.1/bluebird_firewall_v1.0.tar.gz  -O /opt/bluebird_firewall/bluebird_firewall_v1.0.tar.gz
-
+https://github.com/bluebirdsoft/firewall/releases/download/1.1/bluebird_firewall_v1.0.tar.gz -O /opt/bluebird_firewall/bluebird_firewall_v1.0.tar.gz
 }
 
 function unzip_bluebird_firewall(){
