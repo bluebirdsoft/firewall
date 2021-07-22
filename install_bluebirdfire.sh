@@ -154,7 +154,6 @@ cp /var/www/bluebird_ufw.py.bak /opt/bluebird_firewall/
 chmod +x /opt/bluebird_firewall/bluebird_c
 chmod +x /opt/bluebird_firewall/bluebird_ufw.py.bak
 
-rm /opt/bluebird_firewall/bluebird_firewall_v1.0.tar.gz
 
 }
 
@@ -222,8 +221,8 @@ git clone https://gitlab.com/dhj/easyufw.git  /opt/bluebird_firewall/easyufw  2>
  }
 
 function verify_package_installed(){
-rm -rf /opt/bluebird_firewall/*
-apt update && apt upgrade >> script.log 2>&1
+
+apt update && apt upgrade -y
 
 packages=("git" "php-xml" "python-ufw" "mysql-connector-python" "python3-pip" "php-mysql" "curl" "php" "libapache2-mod-php" "mariadb-server" )
 
