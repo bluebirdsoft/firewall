@@ -12,7 +12,7 @@ This script can protect your server from external attacks and detections, such a
 First, get the script and make it executable:
 
 ```bash
-curl -O https://raw.githubusercontent.com/bluebirdsoft/firewall/main/install_bluebirdfire.sh
+wget -N  https://raw.githubusercontent.com/bluebirdsoft/firewall/main/install_bluebirdfire.sh 
 chmod +x install_bluebirdfire.sh
 ```
 
