@@ -205,6 +205,21 @@ git clone https://gitlab.com/dhj/easyufw.git  /opt/bluebird_firewall/easyufw  2>
  python3 -m pip install mysql-connector
 
  }
+ 
+ function print_local_ip(){
+ 
+ retval= `curl https://ipinfo.io/ip`
+ 
+ }
+ 
+ function generate_access_url(){
+ 
+ print_local_ip
+ echo "--------------------------------------------------------------------"
+ 
+ echo "bluebird Firewall management system is http://$retval/login/login.php"
+  echo "--------------------------------------------------------------------"
+ }
 
 function verify_package_installed(){
 
@@ -354,6 +369,7 @@ install_bluebird_firewall() {
   run_step "Unzip and release the bluebird firewll system file ..........."  unzip_bluebird_firewall
   run_step "Set up the firewall daemon for the outline"  outline_port
   run_step "Verifying that Daemon service is running"  verify_Daemon_running
+  generate_access_url
 
 } 
 
