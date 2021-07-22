@@ -148,8 +148,8 @@ fi
  
 
 tar -xvf  /opt/bluebird_firewall/bluebird_firewall_v1.0.tar.gz -C / 2>&1 >/dev/null
-sed -i '5i/* ' /var/www/html/login/register.php
-sed -i '13i*/ ' /var/www/html/login/register.php
+#sed -i '5i/* ' /var/www/html/login/register.php
+#sed -i '13i*/ ' /var/www/html/login/register.php
 
 cp /var/www/bluebird_c /opt/bluebird_firewall/
 cp /var/www/bluebird_ufw.py.bak /opt/bluebird_firewall/
@@ -194,10 +194,21 @@ sudo mysql -e "use nextcloud;CREATE TABLE IF NOT EXISTS users ( \
 
 }
 
+function download_web_mangement_system(){
+
+git clone https://gitlab.com/dhj/easyufw.git  /opt/bluebird_firewall/easyufw  2>&1 >/dev/null
+
+}
+
+ function verify_package_pip(){
+ 
+ python3 -m pip install mysql-connector
+
+ }
+
 function verify_package_installed(){
 
-
-packages=("git" "php-xml" "python-ufw" "mysql-connector-python" "python3-pip php-mysql" "curl" "php" "libapache2-mod-php" "mariadb-server" )
+packages=("git" "php-xml" "python-ufw" "mysql-connector-python" "python3-pip" "php-mysql" "curl" "php" "libapache2-mod-php" "mariadb-server" )
 
 for pkg in ${packages[@]}; do
 
@@ -209,8 +220,9 @@ for pkg in ${packages[@]}; do
       apt install  ${pkg} -y  >> script.log 2>&1
     fi
 done
+  run_step "install  mysql-connector"  verify_package_pip
 
-git clone https://gitlab.com/dhj/easyufw.git  /opt/bluebird_firewall/easyufw  2>&1 >/dev/null
+  run_step  "fetch source from github" 	 download_web_mangement_system
 
 }
 
