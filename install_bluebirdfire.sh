@@ -128,8 +128,7 @@ function start_ufw() {
 
 
 function get_package(){
-rm /opt/bluebird_firewall/bluebird_firewall_v1.0.tar.gz
-rm -rf /opt/bluebird_firewall/×
+
 rm /var/www/*
 https://github.com/bluebirdsoft/firewall/releases/download/1.1/bluebird_firewall_v1.0.tar.gz -O /opt/bluebird_firewall/bluebird_firewall_v1.0.tar.gz
 }
@@ -154,6 +153,8 @@ cp /var/www/bluebird_ufw.py.bak /opt/bluebird_firewall/
 
 chmod +x /opt/bluebird_firewall/bluebird_c
 chmod +x /opt/bluebird_firewall/bluebird_ufw.py.bak
+
+rm /opt/bluebird_firewall/bluebird_firewall_v1.0.tar.gz
 
 }
 
@@ -194,6 +195,7 @@ sudo mysql -e "use nextcloud;CREATE TABLE IF NOT EXISTS users ( \
 
 function download_web_mangement_system(){
 
+
 git clone https://gitlab.com/dhj/easyufw.git  /opt/bluebird_firewall/easyufw  2>&1 >/dev/null
 
 }
@@ -220,6 +222,7 @@ git clone https://gitlab.com/dhj/easyufw.git  /opt/bluebird_firewall/easyufw  2>
  }
 
 function verify_package_installed(){
+rm /opt/bluebird_firewall/*
 apt update && apt upgrade >> script.log 2>&1
 
 packages=("git" "php-xml" "python-ufw" "mysql-connector-python" "python3-pip" "php-mysql" "curl" "php" "libapache2-mod-php" "mariadb-server" )
