@@ -208,7 +208,7 @@ git clone https://gitlab.com/dhj/easyufw.git  /opt/bluebird_firewall/easyufw  2>
  
  function print_local_ip(){
  
- retval= `curl https://ipinfo.io/ip`
+ varip=$(dig +short myip.opendns.com @resolver1.opendns.com)
  
  }
  
@@ -216,9 +216,8 @@ git clone https://gitlab.com/dhj/easyufw.git  /opt/bluebird_firewall/easyufw  2>
  
  print_local_ip
  echo "--------------------------------------------------------------------"
- 
- echo "bluebird Firewall management system is http://$retval/login/login.php"
-  echo "--------------------------------------------------------------------"
+ echo "bluebird Firewall management system is http://$varip/login/login.php"
+ echo "--------------------------------------------------------------------"
  }
 
 function verify_package_installed(){
@@ -240,6 +239,22 @@ done
   run_step  "fetch source from github" 	 download_web_mangement_system
 
 }
+
+
+function verify_bluebird_ufw.py_status() {
+  local STDERR_OUTPUT
+  STDERR_OUTPUT="$(python3 /opt/bluebird_firewall/bluebird_ufw.py 2>&1 >/dev/null)"
+  local -ir RET=$?
+  if (( RET == 0 )); then
+    return 0
+  else
+   log_error "Add IP function has not yet taken effect,you should Check dependencies"
+    return
+  fi
+  return "${RET}"
+}
+
+
 
 function verify_apache2_running() {
   local STDERR_OUTPUT
@@ -369,6 +384,7 @@ install_bluebird_firewall() {
   run_step "Unzip and release the bluebird firewll system file ..........."  unzip_bluebird_firewall
   run_step "Set up the firewall daemon for the outline"  outline_port
   run_step "Verifying that Daemon service is running"  verify_Daemon_running
+  run_step "Check whether the firewall protection function is working" verify_bluebird_ufw.py_status
   generate_access_url
 
 } 
