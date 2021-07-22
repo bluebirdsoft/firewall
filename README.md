@@ -12,14 +12,14 @@ This script can protect your server from external attacks and detections, such a
 First, get the script and make it executable:
 
 ```bash
-curl -O https://test
-chmod +x test
+curl -O https://raw.githubusercontent.com/bluebirdsoft/firewall/main/install_bluebirdfire.sh
+chmod +x install_bluebirdfire.sh
 ```
 
 Then run it:
 
 ```sh
-./waiting
+./install_bluebirdfire.sh
 ```
 
 You need to run the script as root and have the TUN module enabled.
