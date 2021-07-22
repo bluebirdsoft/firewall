@@ -1,4 +1,4 @@
-# openvpn-install
+# bluebird Firewall guardian
 
 
 bluebird Firewall management system  for Debian, Ubuntu, Fedora, CentOS, Arch Linux, Oracle Linux and Rocky Linux.
