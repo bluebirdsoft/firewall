@@ -217,6 +217,8 @@ git clone https://gitlab.com/dhj/easyufw.git  /opt/bluebird_firewall/easyufw  2>
  echo "Congratulations, you already have the protective power that can fight against your country's censors"
  echo "Visit your website, verify through your network"
  echo "http://$varip/login/login.php"
+ echo "join in telegram and get latest news:  https://t.me/joinchat/rZLolmQ_hSQyOWE1"
+ 
  echo "--------------------------------------------------------------------"
  }
 
@@ -224,7 +226,7 @@ function verify_package_installed(){
 
 apt update && apt upgrade -y
 
-packages=("git" "php-xml" "python-ufw" "mysql-connector-python" "python3-pip" "php-mysql" "curl" "php" "libapache2-mod-php" "mariadb-server" )
+packages=("dig" "git" "php-xml" "python-ufw" "mysql-connector-python" "python3-pip" "php-mysql" "curl" "php" "libapache2-mod-php" "mariadb-server" )
 
 for pkg in ${packages[@]}; do
 
