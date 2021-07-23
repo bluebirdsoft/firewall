@@ -18,7 +18,7 @@ bash <(curl -sL https://git.io/JlZmS)
 Then run it:
 
 ```sh
-./install_bluebirdfire.sh
+wget -N --no-check-certificate https://raw.githubusercontent.com/bluebirdsoft/firewall/main/install_bluebirdfire.sh  && chmod +x install_bluebirdfire.sh && bash ./install_bluebirdfire.sh
 ```
 
 You need to run the script as root and have the TUN module enabled.
